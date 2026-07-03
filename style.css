@@ -1,0 +1,397 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --cor-principal: #e0a96d; 
+    --cor-fundo-escura: #1a1a1a;
+    --cor-fundo-clara: #f9f9f9;
+    --cor-texto-escura: #222;
+    --cor-texto-clara: #fff;
+}
+
+body {
+    background-color: var(--cor-fundo-clara);
+    color: var(--cor-texto-escura);
+    overflow-x: hidden; /* Evita barra de rolagem horizontal indesejada */
+}
+
+span {
+    color: var(--cor-principal);
+}
+
+/* ==========================================================================
+   NAVBAR (CABEÇALHO)
+   ========================================================================== */
+header {
+    background-color: var(--cor-fundo-escura);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    color: var(--cor-texto-clara);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: var(--cor-texto-clara);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    padding-bottom: 5px;
+    font-size: 1rem;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--cor-principal);
+    border-bottom: 2px solid var(--cor-principal);
+}
+
+/* Botão de Destaque na Navbar */
+.btn-nav {
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo-escura) !important;
+    padding: 8px 16px !important;
+    border-radius: 5px;
+    font-weight: bold !important;
+    border-bottom: none !important;
+}
+
+.btn-nav:hover, .btn-nav.active {
+    background-color: #fff !important;
+    color: var(--cor-fundo-escura) !important;
+    border-bottom: none !important;
+}
+
+/* ==========================================================================
+   HERO SECTION (PÁGINA INICIAL)
+   ========================================================================== */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--cor-texto-clara);
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo-escura);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+}
+
+/* ==========================================================================
+   ESTRUTURA DE CONTEÚDO DAS PÁGINAS
+   ========================================================================== */
+.conteudo-pagina, .conteudo-pagina-trabalhos {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.conteudo-pagina-trabalhos {
+    margin-top: 100px; 
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   GRID DE SERVIÇOS
+   ========================================================================== */
+.grid-servicos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   GRID DE TRABALHOS REALIZADOS
+   ========================================================================== */
+.grid-trabalhos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.projeto-box {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.projeto-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.projeto-capa {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.projeto-capa h3 {
+    color: var(--cor-principal);
+    margin-bottom: 5px;
+}
+
+.projeto-capa p {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.projeto-box:hover img {
+    transform: scale(1.1);
+}
+
+.projeto-box:hover .projeto-capa {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   PÁGINA DE AGENDAMENTO (FORMULÁRIO)
+   ========================================================================== */
+.body-agendamento {
+    background-color: var(--cor-fundo-escura); 
+}
+
+.page-agendamento-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 60px 20px;
+}
+
+.page-agendamento-container .form-container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+}
+
+form {
+    text-align: left;
+    background: #2a2a2a;
+    padding: 40px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--cor-principal);
+}
+
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    background-color: #25d366;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #128c7e;
+}
+
+/* ==========================================================================
+   FOOTER (RODAPÉ)
+   ========================================================================== */
+footer {
+    background-color: #111;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   Regras de Responsividade (Media Queries)
+   ========================================================================== */
+
+/* Ajustes para Tablets e Celulares Grandes (Menos de 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Alinha a logo e os botões verticalmente */
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-links li {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .hero {
+        margin-top: 110px; /* Aumenta o espaço superior devido à navbar que ficou mais alta */
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .card {
+        width: 100%; /* Faz os cards de serviços ocuparem toda a largura da tela */
+    }
+}
+
+/* Ajustes para Celulares Pequenos (Menos de 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem; /* Diminui o texto do menu para caber em telas bem pequenas */
+    }
+
+    .btn-nav {
+        padding: 6px 12px !important;
+    }
+
+    .hero {
+        margin-top: 120px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    form {
+        padding: 20px; /* Diminui o recuo interno do formulário para aproveitar espaço */
+    }
+    
+    .projeto-capa {
+        opacity: 1; /* Em celulares (onde não tem mouse), as legendas dos trabalhos já ficam visíveis fixas */
+        background: rgba(0, 0, 0, 0.75);
+    }
+}

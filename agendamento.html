@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Trabalho | Luiz Marketing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="body-agendamento">
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Luiz<span>.Marketing</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="trabalhos.html">Trabalhos Realizados</a></li>
+                <li><a href="agendamento.html" class="btn-nav active">Agendar Trabalho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-agendamento-container">
+        <div class="form-container">
+            <h2>Agende um <span>Trabalho</span></h2>
+            <p>Preencha os campos abaixo para alinhar a sua estratégia diretamente comigo.</p>
+            
+            <form id="form-agendamento">
+                <div class="input-group">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" placeholder="Ex: Maria Silva" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="servico">Serviço Desejado</label>
+                    <select id="servico" required>
+    <option value="" disabled selected>Selecione uma opção...</option>
+    <option value="Edição de Vídeo (Reels/TikTok)">Edição de Vídeo (Reels/TikTok)</option>
+    <option value="Artes para Feed/Stories">Artes para Feed/Stories</option>
+    <option value="Pacote Completo (Vídeos + Fotos)">Pacote Completo (Vídeos + Fotos)</option>
+</select>
+                </div>
+
+                <div class="input-group">
+                    <label for="data">Data de Preferência</label>
+                    <input type="date" id="data" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="mensagem">Detalhes do seu Negócio</label>
+                    <textarea id="mensagem" rows="4" placeholder="Conte resumidamente sobre a sua empresa..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Pedido via WhatsApp <i class="fab fa-whatsapp"></i></button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Luiz Marketing. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
