@@ -120,7 +120,7 @@ header {
     line-height: 1.6;
 }
 
-.btn-primary {
+.botao-agendar {
     background-color: var(--cor-principal);
     color: var(--cor-fundo-escura);
     padding: 12px 30px;
@@ -131,7 +131,7 @@ header {
     display: inline-block;
 }
 
-.btn-primary:hover {
+.botao-agendar:hover {
     background-color: #fff;
 }
 
